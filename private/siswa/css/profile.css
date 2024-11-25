@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f9ff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.profile-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+}
+
+.profile-container h2 {
+    color: #2196f3;
+    margin-bottom: 20px;
+}
+
+.back-button, .edit-password {
+    text-decoration: none;
+    font-size: 14px;
+    color: red;
+    margin: 10px 0;
+}
+
+.back-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.edit-password {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 2px solid #2196f3;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.profile-picture:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.upload-text {
+    position: absolute;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 60%;
+    padding: 5px 0;
+    border-radius: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.profile-picture:hover .upload-text {
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(0, 123, 255, 0.7);
+}
+
+.upload-text:hover {
+    background-color: rgba(0, 123, 255, 1);
+    color: #fff;
+    transform: scale(0.9); 
+}
+
+
+.profile-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.profile-details label {
+    font-weight: bold;
+    width: 45%;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.profile-details p {
+    width: 45%;
+    margin: 0;
+    padding-bottom: 10px;
+    display: inline-block;
+    text-align: left;
+    font-weight: bold;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-details p::before {
+    content: " : ";
+    margin-left: 5px;
+}
+
+.edit-button {
+    margin-top: 20px;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+.edit-button:hover {
+    background-color: rgb(35, 240, 52);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 8px 40px 8px 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #1e88e5;
+}
+
+.btn-upload {
+    position: relative;
+    padding: 5px 10px;
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.btn-upload:hover {
+    background-color: #1e88e5;
+}
+
+.btn-cancel {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.btn-cancel:hover {
+    background-color: #e53935;
+}
+
+.password-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input input {
+    padding-right: 30px;
+    width: 100%;
+    padding: 8px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.eye-icon:hover {
+    transform: scale(1.2); 
+}
+
+input[type="password"] {
+    font-size: 16px;
+}
+
+input[type="password"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.logout-button {
+    margin-top: 10px;
+    margin-bottom: -5px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    margin-right: 3ch;
+}
+
+.logout-button:hover {
+    background-color: rgb(240, 52, 35);
+}
+
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 95%;
+    }
+
+    .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .profile-details label,
+    .profile-details p {
+        flex: 1 1 45%;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .edit-button {
+        font-size: 10px;
+        padding: 5px 10px;
+        position: absolute;
+        right: 20px;
+        bottom: 10px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .edit-button:hover {
+        background-color: rgb(35, 240, 52);
+    }
+
+    .logout-button {
+        font-size: 10px;
+        padding: 5px 10px;
+        bottom: 15px;
+    }
+
+    button[type="submit"],
+    .btn-upload,
+    .btn-cancel {
+        font-size: 12px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}

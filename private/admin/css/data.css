@@ -1,0 +1,148 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+.tables-container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.table-wrapper {
+    width: 48%;
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    min-width: 500px;
+    font-size: 12px; 
+}
+
+table th, table td {
+    padding: 8px; 
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #007BFF;
+    color: white;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+a:active {
+    color: #004085;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0; 
+}
+
+.btn-back, .btn-daftar {
+    padding: 8px 15px; 
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 12px; 
+    display: inline-block;
+    margin-right: 10px; 
+    transition: all 0.3s ease;
+}
+
+.btn-back {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #218838;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05); 
+}
+
+.btn-back:active {
+    background-color: #1e7e34;
+    transform: scale(1);
+}
+
+.btn-daftar {
+    background-color: #007BFF;
+    color: white;
+}
+
+.btn-daftar:hover {
+    background-color: #0056b3;
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+.btn-daftar:active {
+    background-color: #004085;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .tables-container {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .table-wrapper {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+
+    .btn-back, .btn-daftar {
+        width: 100%; 
+        margin-right: 0;
+    }
+
+    table {
+        font-size: 10px; 
+    }
+
+    .btn-back, .btn-daftar {
+        width: 10%; 
+        font-size: 9px;
+        padding: 8px 16px;
+        margin: 1px 2%;
+    }
+    
+}
