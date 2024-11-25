@@ -1,0 +1,6 @@
+- pipeline: "Present Kominfo"
+  on: "CLICK"
+  refs:
+  - "refs/heads/main"
+  - ":default"
+  fail_on_prepare_env_warning: true
